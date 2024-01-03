@@ -20,11 +20,11 @@ A new Flutter plugin.
   # Download SDKs from office website manually and import it to `./Libraries/`
   s.subspec 'Vendor' do |sp|
     sp.resources = "Libraries/*.bundle"
-    sp.vendored_frameworks = 'Libraries/*.framework'
+    sp.vendored_frameworks = 'Libraries/*.xcframework'
     sp.frameworks = 'WebKit'
   end
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 i386' }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 end
